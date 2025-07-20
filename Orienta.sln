@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orienta.API", "src/Orienta.API\Orienta.API.csproj", "{9D1F9E49-87A9-4463-B35E-8CE6D4A6E588}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orienta.Application", "src/Orienta.Application\Orienta.Application.csproj", "{0952E28F-FD0F-432B-A37D-61059CD5B217}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orienta.Domain", "src/Orienta.Domain\Orienta.Domain.csproj", "{2321E32B-EB8F-438B-A1EA-08AF406836B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orienta.Infrastructure", "src/Orienta.Infrastructure\Orienta.Infrastructure.csproj", "{E1A836A9-A968-47AC-905A-33C8259A7E46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orienta.Shared", "src/Orienta.Shared\Orienta.Shared.csproj", "{22CC58A6-D2AA-46C2-A8F4-C6D61C56BA31}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D1F9E49-87A9-4463-B35E-8CE6D4A6E588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D1F9E49-87A9-4463-B35E-8CE6D4A6E588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D1F9E49-87A9-4463-B35E-8CE6D4A6E588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D1F9E49-87A9-4463-B35E-8CE6D4A6E588}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0952E28F-FD0F-432B-A37D-61059CD5B217}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0952E28F-FD0F-432B-A37D-61059CD5B217}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0952E28F-FD0F-432B-A37D-61059CD5B217}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0952E28F-FD0F-432B-A37D-61059CD5B217}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2321E32B-EB8F-438B-A1EA-08AF406836B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2321E32B-EB8F-438B-A1EA-08AF406836B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2321E32B-EB8F-438B-A1EA-08AF406836B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2321E32B-EB8F-438B-A1EA-08AF406836B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1A836A9-A968-47AC-905A-33C8259A7E46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1A836A9-A968-47AC-905A-33C8259A7E46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1A836A9-A968-47AC-905A-33C8259A7E46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1A836A9-A968-47AC-905A-33C8259A7E46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22CC58A6-D2AA-46C2-A8F4-C6D61C56BA31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22CC58A6-D2AA-46C2-A8F4-C6D61C56BA31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22CC58A6-D2AA-46C2-A8F4-C6D61C56BA31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22CC58A6-D2AA-46C2-A8F4-C6D61C56BA31}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
