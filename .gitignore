@@ -1,0 +1,42 @@
+## Ignore arquivos de build
+bin/
+obj/
+**/bin/
+**/obj/
+
+## Ignore arquivos de usuário do VS/VSCode/Rider
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vscode/
+.idea/
+
+## Migrations snapshot (se usar Snapshot para testes)
+*.snap
+
+## Logs
+*.log
+
+## Configs temporários
+*.dbmdl
+*.db
+*.pidb
+
+## Arquivos de pacotes
+*.nupkg
+*.nuspec
+packages/
+
+## Arquivos do Rider
+.idea/
+
+## Sistema
+Thumbs.db
+Desktop.ini
+
+## EF Core
+Migrations/
+
+## Mac/Linux
+.DS_Store
