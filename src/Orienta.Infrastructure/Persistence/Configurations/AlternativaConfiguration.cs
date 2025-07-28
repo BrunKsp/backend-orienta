@@ -23,11 +23,6 @@ public class AlternativaConfiguration : BaseConfiguration<AlternativaEntity>
             .HasColumnName("correta")
             .IsRequired();
 
-        // Se a propriedade Ordem realmente existir:
-        // builder.Property(x => x.Ordem)
-        //     .HasColumnName("ordem")
-        //     .IsRequired();
-
         builder.HasOne(x => x.Pergunta)
             .WithMany(p => p.Alternativas)
             .HasForeignKey(x => x.PerguntaId)

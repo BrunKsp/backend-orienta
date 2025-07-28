@@ -2,7 +2,7 @@ using Orienta.Domain.Entities;
 
 namespace Orienta.Infrastructure.Repositories;
 
-public interface IQuestionarioRepository
+public interface IQuestionarioRepository : IBaseRepository<QuestionarioEntity>
 {
     Task SalvarAsync(QuestionarioEntity questionario);
 }

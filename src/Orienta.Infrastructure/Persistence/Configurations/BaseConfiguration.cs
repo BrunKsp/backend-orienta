@@ -19,8 +19,8 @@ public abstract class BaseConfiguration<TEntity> : IEntityTypeConfiguration<TEnt
             .HasMaxLength(30);
 
         builder.Property(x => x.Status)
-          .HasColumnName("status")
-          .IsRequired();
+            .HasColumnName("status")
+            .IsRequired();
 
         builder.Property(x => x.CriadoEm)
             .HasColumnName("criado_em")
