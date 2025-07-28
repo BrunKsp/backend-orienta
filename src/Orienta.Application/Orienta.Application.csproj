@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Orienta.Domain\Orienta.Domain.csproj" />
     <ProjectReference Include="..\Orienta.Shared\Orienta.Shared.csproj" />
+    <ProjectReference Include="..\Orienta.Infrastructure\Orienta.Infrastructure.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

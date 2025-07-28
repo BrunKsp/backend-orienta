@@ -11,6 +11,7 @@ public class OrientaDbContext : DbContext
 
     public DbSet<PerguntaEntity> Perguntas { get; set; }
     public DbSet<AlternativaEntity> Alternativas { get; set; }
+    public DbSet<QuestionarioEntity> Questionarios { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
 
