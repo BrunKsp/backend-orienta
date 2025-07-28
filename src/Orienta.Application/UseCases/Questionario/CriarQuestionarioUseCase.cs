@@ -19,14 +19,11 @@ public class CriarQuestionarioUseCase
         _repository = repository;
     }
 
-    public async Task ExecuteAsync(
-     string titulo,
-     string? descricao,
-     Guid? professorId,
-     List<PerguntaDto> perguntaDtos,
-     QuestionarioFactoryType tipo)
+    public async Task ExecuteAsync(CriarQuestionarioDto dto)
     {
-        var perguntas = perguntaDtos.Select(p =>
+        if (dto.Perguntas == null || !dto.Perguntas.Any())
+            throw new ArgumentException("É necessário enviar pelo menos uma pergunta.");
+        var perguntas = dto.Perguntas.Select(p =>
             new PerguntaEntity(
                 Guid.Empty,
                 p.Enunciado,
@@ -35,8 +32,8 @@ public class CriarQuestionarioUseCase
                 p.RespostaEsperada
             )).ToList();
 
-        var factory = _factoryProvider.Resolver(tipo);
-        var questionario = factory.Criar(titulo, descricao, professorId, perguntas);
-        await _repository.SalvarAsync(questionario);
+        var factory = _factoryProvider.Resolver(dto.Tipo);
+        var questionario = factory.Criar(dto.Titulo, dto.Descricao, dto.ProfessorId, perguntas);
+        await _repository.CriarAsync(questionario);
     }
 }

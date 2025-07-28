@@ -19,10 +19,6 @@ public class QuestionarioConfiguration : BaseConfiguration<QuestionarioEntity>
             .HasColumnName("descricao")
             .HasMaxLength(500);
 
-        builder.Property(x => x.DataCriacao)
-            .HasColumnName("data_criacao")
-            .HasDefaultValueSql("CURRENT_TIMESTAMP");
-
         builder.HasMany(x => x.Perguntas)
             .WithOne()
             .HasForeignKey(p => p.QuestionarioId)

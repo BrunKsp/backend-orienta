@@ -4,5 +4,5 @@ namespace Orienta.Infrastructure.Repositories;
 
 public interface IQuestionarioRepository : IBaseRepository<QuestionarioEntity>
 {
-    Task SalvarAsync(QuestionarioEntity questionario);
+
 }

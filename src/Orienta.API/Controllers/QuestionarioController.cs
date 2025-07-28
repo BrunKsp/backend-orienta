@@ -20,7 +20,7 @@ namespace Orienta.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Criar([FromBody] CriarQuestionarioDto dto)
         {
-            await _useCase.ExecuteAsync(dto.Titulo, dto.Descricao, dto.ProfessorId, new(), dto.Tipo);
+            await _useCase.ExecuteAsync(dto);
             return Ok("Questionário criado com sucesso");
         }
     }
