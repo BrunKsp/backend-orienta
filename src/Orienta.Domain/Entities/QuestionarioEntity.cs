@@ -14,4 +14,10 @@ public class QuestionarioEntity : BaseEntity
         ProfessorId = professorId;
         Perguntas = perguntas;
     }
+
+    public void AdicionarPergunta(PerguntaEntity pergunta)
+    {
+        pergunta.VincularQuestionario(Id);
+        Perguntas.Add(pergunta);
+    }
 }

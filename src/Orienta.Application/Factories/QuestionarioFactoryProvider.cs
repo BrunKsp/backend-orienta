@@ -1,4 +1,3 @@
-// Orienta.Application/Factories/QuestionarioFactoryProvider.cs
 using Microsoft.Extensions.DependencyInjection;
 using Orienta.Domain.Contracts;
 using Orienta.Domain.Enums;

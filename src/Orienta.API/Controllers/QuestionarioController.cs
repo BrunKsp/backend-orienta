@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Orienta.Application.UseCases;
+using Orienta.Application.UseCases.Questionario;
 using Orienta.Domain.Entities;
 using Orienta.Domain.Enums;
 
@@ -19,11 +20,7 @@ namespace Orienta.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Criar([FromBody] CriarQuestionarioDto dto)
         {
-            var perguntas = dto.Perguntas.Select(p =>
-                new PerguntaEntity(p.Texto, (TipoPergunta)p.Tipo)
-            ).ToList();
-
-            await _useCase.ExecuteAsync(dto.Titulo, dto.Descricao, dto.ProfessorId, perguntas, dto.Tipo);
+            await _useCase.ExecuteAsync(dto.Titulo, dto.Descricao, dto.ProfessorId, new(), dto.Tipo);
             return Ok("Questionário criado com sucesso");
         }
     }
