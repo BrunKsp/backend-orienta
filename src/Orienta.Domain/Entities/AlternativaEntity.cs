@@ -6,6 +6,7 @@ public class AlternativaEntity : BaseEntity
     public bool Correta { get; private set; }
     public Guid PerguntaId { get; private set; }
     public PerguntaEntity Pergunta { get; private set; }
+    
     private AlternativaEntity() { }
 
     public AlternativaEntity(string texto, bool correta)

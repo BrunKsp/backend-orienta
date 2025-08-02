@@ -53,8 +53,8 @@ public class OrientaDbContextFactory : IDesignTimeDbContextFactory<OrientaDbCont
     {
         var builder = new DbContextOptionsBuilder<OrientaDbContext>();
 
-        builder.UseNpgsql("User ID=coderace_owner;Password=npg_NxiVMfhaA02W;Host=ep-steep-poetry-a69f74zc-pooler.us-west-2.aws.neon.tech;Port=5432;Database=coderace",
-                 x => x.MigrationsHistoryTable("__ef_historico_migrations", "orienta"));
+        builder.UseNpgsql("User ID=postgres;Password=postgres;Host=localhost;Port=5432;Database=apps",
+                x => x.MigrationsHistoryTable("__ef_historico_migrations", "orienta"));
 
         return new OrientaDbContext(builder.Options);
     }

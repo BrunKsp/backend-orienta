@@ -1,13 +1,14 @@
 using Orienta.Domain.Contracts;
 using Orienta.Domain.Entities;
+using Orienta.Domain.Enums;
 
 namespace Orienta.Infrastructure.Factories;
 
 public class QuestionarioIAFactory : IQuestionarioFactory
 {
-    public QuestionarioEntity Criar(string titulo, string? descricao, Guid? professorId, List<PerguntaEntity> perguntas)
+    public QuestionarioEntity Criar(string titulo, string? descricao, string professorSlug, List<PerguntaEntity> perguntas)
     {
-        var tituloIA = $"[IA] {titulo}";
-        return new QuestionarioEntity(tituloIA, descricao, null, perguntas);
+        var criadoPor = QuestionarioFactoryType.IA;
+        return new QuestionarioEntity(titulo, descricao, null, criadoPor, perguntas);
     }
 }

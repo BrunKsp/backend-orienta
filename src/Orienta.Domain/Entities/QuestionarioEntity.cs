@@ -1,17 +1,23 @@
+using Orienta.Domain.Enums;
+
 namespace Orienta.Domain.Entities;
 
 public class QuestionarioEntity : BaseEntity
 {
     public string Titulo { get; private set; }
     public string Descricao { get; private set; }
-    public Guid? ProfessorId { get; private set; }
+    public string ProfessorSlug { get; private set; }
+    public QuestionarioFactoryType CriadoPor { get; private set; }
     public List<PerguntaEntity> Perguntas { get; private set; }
 
-    public QuestionarioEntity(string titulo, string descricao, Guid? professorId, List<PerguntaEntity> perguntas)
+    private QuestionarioEntity() { }
+
+    public QuestionarioEntity(string titulo, string descricao, string professorSlug, QuestionarioFactoryType criadoPor, List<PerguntaEntity> perguntas)
     {
         Titulo = titulo;
         Descricao = descricao;
-        ProfessorId = professorId;
+        ProfessorSlug = professorSlug;
+        CriadoPor = criadoPor;
         Perguntas = perguntas;
     }
 

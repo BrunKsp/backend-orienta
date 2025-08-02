@@ -19,6 +19,12 @@ public class QuestionarioConfiguration : BaseConfiguration<QuestionarioEntity>
             .HasColumnName("descricao")
             .HasMaxLength(500);
 
+        builder.Property(x => x.ProfessorSlug)
+           .HasColumnName("professor_slug");
+
+        builder.Property(x => x.CriadoPor)
+           .HasColumnName("criado_por");
+
         builder.HasMany(x => x.Perguntas)
             .WithOne()
             .HasForeignKey(p => p.QuestionarioId)
