@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Orienta.Application\Orienta.Application.csproj" />
     <ProjectReference Include="..\Orienta.Domain\Orienta.Domain.csproj" />
     <ProjectReference Include="..\Orienta.Shared\Orienta.Shared.csproj" />
   </ItemGroup>

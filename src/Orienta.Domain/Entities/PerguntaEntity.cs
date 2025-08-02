@@ -37,6 +37,11 @@ public class PerguntaEntity : BaseEntity
         RespostaEsperada = respostaEsperada;
     }
 
+    public void VincularQuestionario(Guid questionarioId)
+    {
+        QuestionarioId = questionarioId;
+    }
+
     public void AdicionarAlternativa(AlternativaEntity alternativa)
     {
         alternativa.VincularPergunta(Id);

@@ -11,6 +11,7 @@ public class OrientaDbContext : DbContext
 
     public DbSet<PerguntaEntity> Perguntas { get; set; }
     public DbSet<AlternativaEntity> Alternativas { get; set; }
+    public DbSet<QuestionarioEntity> Questionarios { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
 
@@ -53,7 +54,7 @@ public class OrientaDbContextFactory : IDesignTimeDbContextFactory<OrientaDbCont
         var builder = new DbContextOptionsBuilder<OrientaDbContext>();
 
         builder.UseNpgsql("User ID=postgres;Password=postgres;Host=localhost;Port=5432;Database=apps",
-                 x => x.MigrationsHistoryTable("__ef_historico_migrations", "code_race"));
+                x => x.MigrationsHistoryTable("__ef_historico_migrations", "orienta"));
 
         return new OrientaDbContext(builder.Options);
     }

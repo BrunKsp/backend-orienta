@@ -3,12 +3,12 @@
   <ItemGroup>
     <ProjectReference Include="..\Orienta.Domain\Orienta.Domain.csproj" />
     <ProjectReference Include="..\Orienta.Shared\Orienta.Shared.csproj" />
+    <ProjectReference Include="..\Orienta.Infrastructure\Orienta.Infrastructure.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.7" />
