@@ -1,4 +1,5 @@
 using Orienta.Application.DTOs.Perguntas;
+using Orienta.Application.Exceptions;
 using Orienta.Domain.Contracts;
 using Orienta.Domain.Entities;
 using Orienta.Domain.Enums;
@@ -22,7 +23,7 @@ public class CriarQuestionarioUseCase
     public async Task ExecuteAsync(CriarQuestionarioDto dto)
     {
         if (dto.Perguntas == null || !dto.Perguntas.Any())
-            throw new ArgumentException("É necessário enviar pelo menos uma pergunta.");
+            throw CustomException.ErroValidacao(new { error = "É necessário enviar pelo menos uma pergunta." });
         var perguntas = dto.Perguntas.Select(p =>
             new PerguntaEntity(
                 Guid.Empty,
@@ -33,7 +34,7 @@ public class CriarQuestionarioUseCase
             )).ToList();
 
         var factory = _factoryProvider.Resolver(dto.Tipo);
-        var questionario = factory.Criar(dto.Titulo, dto.Descricao, dto.ProfessorId, perguntas);
-        await _repository.CriarAsync(questionario);
+        var questionario = factory.Criar(dto.Titulo, dto.Descricao, dto.ProfessorSlug, perguntas);
+        await _repository.Criar(questionario);
     }
 }

@@ -14,6 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.SwaggerServiceConfig();
 
+
 builder.Services
     .AddApplication()
     .AddInfrastructure(builder.Configuration);
@@ -32,9 +33,11 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.Services.AuthServiceConfig(builder.Configuration);
 
 var app = builder.Build();
 
+app.AuthAppConfig();
 app.UseSwagger();
 app.UseSwaggerUI();
 
