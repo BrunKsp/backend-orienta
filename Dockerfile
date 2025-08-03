@@ -5,7 +5,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["src/Orieta.API/Orienta.API.csproj", "src/Orienta.API/"]
+COPY ["src/Orienta.API/Orienta.API.csproj", "src/Orienta.API/"]
 RUN dotnet restore "src/Orienta.API/Orienta.API.csproj" 
 COPY . .
 WORKDIR "/src/src/Orienta.API"
