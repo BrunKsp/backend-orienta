@@ -13,6 +13,7 @@ public static class DependencyInjection
         services.AddScoped<IQuestionarioFactoryProvider, QuestionarioFactoryProvider>();
         services.AddScoped<CriarQuestionarioUseCase>();
         services.AddScoped<CriarProfessorUseCase>();
+        services.AddScoped<IUsuarioFactoryProvider, UsuarioFactoryProvider>();
 
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
