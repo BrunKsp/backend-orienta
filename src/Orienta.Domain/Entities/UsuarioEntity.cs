@@ -12,7 +12,7 @@ public class UsuarioEntity : BaseEntity
 
     protected UsuarioEntity() { }
 
-    protected UsuarioEntity(string nome, string email, string senha, string foto, TipoUsuario tipo)
+    public UsuarioEntity(string nome, string email, string senha, string foto, TipoUsuario tipo)
     {
         Nome = nome;
         Email = email;

@@ -12,14 +12,14 @@ public class OrientaDbContext : DbContext
     public DbSet<PerguntaEntity> Perguntas { get; set; }
     public DbSet<AlternativaEntity> Alternativas { get; set; }
     public DbSet<QuestionarioEntity> Questionarios { get; set; }
-    public DbSet<ProfessorEntity> Professores { get; set; }
-    public DbSet<AlunoEntity> Alunos { get; set; }
+    public DbSet<UsuarioEntity> Usuarios { get; set; }
     public DbSet<RespostaEntity> Respostas { get; set; }
     public DbSet<RespostaPerguntaEntity> RespostaPerguntas { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
 
         modelBuilder.HasDefaultSchema("orienta");
+
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(OrientaDbContext).Assembly);
         foreach (var property in modelBuilder.Model.GetEntityTypes()
                     .SelectMany(e => e.GetProperties()
@@ -57,7 +57,7 @@ public class OrientaDbContextFactory : IDesignTimeDbContextFactory<OrientaDbCont
     {
         var builder = new DbContextOptionsBuilder<OrientaDbContext>();
 
-        builder.UseNpgsql("User ID=coderace_owner;Password=npg_NxiVMfhaA02W;Host=ep-steep-poetry-a69f74zc-pooler.us-west-2.aws.neon.tech;Port=5432;Database=coderace",
+        builder.UseNpgsql("User ID=admin;Password=admin;Host=localhost;Port=5432;Database=admin",
                 x => x.MigrationsHistoryTable("__ef_historico_migrations", "orienta"));
 
         return new OrientaDbContext(builder.Options);
