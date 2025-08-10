@@ -16,8 +16,8 @@ public class PerguntaEntity : BaseEntity
         Guid questionarioId,
         string enunciado,
         TipoPergunta tipo,
-        List<AlternativaEntity>? alternativas = null,
-        string? respostaEsperada = null)
+        List<AlternativaEntity> alternativas = null,
+        string respostaEsperada = null)
     {
         Id = Guid.NewGuid();
         QuestionarioId = questionarioId;

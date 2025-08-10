@@ -1,8 +1,11 @@
-namespace Orienta.Domain.Entities;
+using Orienta.Domain.Entities;
 
-public interface IBaseRepository<T> where T : BaseEntity
+namespace Orienta.Infrastructure.Repositories.Interfaces;
+
+public interface IBaseRepository<TModel> where TModel : BaseEntity
 {
-    Task<T> CriarAsync(T entity);
-    Task<T> AlterarAsync(T entity);
-    Task<T?> ObterPorIdAsync(Guid id);
+    Task Criar(TModel model);
+    Task Alterar(TModel model);
+    Task Deletar(TModel model);
+    Task<TModel> BuscarPorSlug(string slug);
 }

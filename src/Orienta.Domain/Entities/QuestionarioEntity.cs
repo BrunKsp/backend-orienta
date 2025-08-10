@@ -10,7 +10,7 @@ public class QuestionarioEntity : BaseEntity
     public QuestionarioFactoryType CriadoPor { get; private set; }
     public List<PerguntaEntity> Perguntas { get; private set; }
 
-    private QuestionarioEntity() { }
+    protected  QuestionarioEntity() { }
 
     public QuestionarioEntity(string titulo, string descricao, string professorSlug, QuestionarioFactoryType criadoPor, List<PerguntaEntity> perguntas)
     {

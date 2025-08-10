@@ -1,3 +1,5 @@
+.env
+
 ## Ignore arquivos de build
 bin/
 obj/

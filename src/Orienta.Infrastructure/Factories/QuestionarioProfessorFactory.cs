@@ -6,7 +6,7 @@ namespace Orienta.Infrastructure.Factories;
 
 public class QuestionarioProfessorFactory : IQuestionarioFactory
 {
-    public QuestionarioEntity Criar(string titulo, string? descricao, string professorSlug, List<PerguntaEntity> perguntas)
+    public QuestionarioEntity Criar(string titulo, string descricao, string professorSlug, List<PerguntaEntity> perguntas)
     {
         return new QuestionarioEntity(titulo, descricao, professorSlug, QuestionarioFactoryType.Professor, perguntas);
     }

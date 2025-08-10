@@ -1,35 +1,50 @@
+using System.Data.Common;
 using Microsoft.EntityFrameworkCore;
 using Orienta.Domain.Entities;
+using Orienta.Infrastructure.Persistence;
+using Orienta.Infrastructure.Repositories.Interfaces;
 
-namespace Orienta.Infrastructure.Repositories;
-
-public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
+namespace Orienta.Infrastructure.Repositories
 {
-    protected readonly DbContext _context;
-    protected readonly DbSet<T> _dbSet;
-
-    public BaseRepository(DbContext context)
+    public abstract class BaseRepository<TModel> : IBaseRepository<TModel> where TModel : BaseEntity
     {
-        _context = context;
-        _dbSet = _context.Set<T>();
-    }
+        protected readonly OrientaDbContext _context;
+        protected readonly DbSet<TModel> DbSet;
 
-    public async Task<T> CriarAsync(T entity)
-    {
-        await _dbSet.AddAsync(entity);
-        await _context.SaveChangesAsync();
-        return entity;
-    }
+        protected DbConnection Connection
+        {
+            get
+            {
+                return _context.Database.GetDbConnection();
+            }
+        }
 
-    public async Task<T> AlterarAsync(T entity)
-    {
-        _dbSet.Update(entity);
-        await _context.SaveChangesAsync();
-        return entity;
-    }
+        public BaseRepository(OrientaDbContext context)
+        {
+            _context = context;
+            DbSet = context.Set<TModel>();
+        }
+        public async Task Criar(TModel model)
+        {
+            DbSet.Add(model);
+            await _context.SaveChangesAsync();
+        }
 
-    public async Task<T?> ObterPorIdAsync(Guid id)
-    {
-        return await _dbSet.FindAsync(id);
+        public async Task Alterar(TModel model)
+        {
+            DbSet.Update(model);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task Deletar(TModel model)
+        {
+            DbSet.Remove(model);
+            await _context.SaveChangesAsync();
+        }
+
+        public virtual async Task<TModel> BuscarPorSlug(string slug)
+        {
+            return await DbSet.FirstOrDefaultAsync(x => x.Slug == slug);
+        }
     }
 }
