@@ -6,15 +6,15 @@ using Orienta.Infrastructure.Repositories.Interfaces;
 
 namespace Orienta.Infrastructure.Repositories;
 
-public class ProfessorRepository : BaseRepository<ProfessorEntity>, IProfessorRepository
+public class AlunoRepository : BaseRepository<AlunoEntity>, IAlunoRepository
 {
 
-    public ProfessorRepository(OrientaDbContext context) : base(context)
+    public AlunoRepository(OrientaDbContext context) : base(context)
     {
 
     }
 
-    public async Task<ProfessorEntity> ObterPorEmailAsync(string email)
+    public async Task<AlunoEntity> ObterPorEmailAsync(string email)
     {
         return await DbSet.FirstOrDefaultAsync(p => p.Email == email);
     }

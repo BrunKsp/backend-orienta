@@ -7,7 +7,7 @@ using Orienta.Domain.Enums;
 namespace Orienta.API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class QuestionarioController : ControllerBase
     {
         private readonly CriarQuestionarioUseCase _useCase;

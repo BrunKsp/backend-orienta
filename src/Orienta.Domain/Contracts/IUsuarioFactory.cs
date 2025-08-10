@@ -2,7 +2,7 @@ using Orienta.Domain.Entities;
 
 namespace Orienta.Domain.Contracts;
 
-public interface IUsuarioFactory
+public interface IUsuarioFactory<out TUsuario> where TUsuario : UsuarioEntity
 {
-    UsuarioEntity Criar(string nome, string email, string senha, string foto);
+    TUsuario Criar(string nome, string email, string senha, string foto);
 }

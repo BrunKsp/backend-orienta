@@ -8,7 +8,7 @@ public class RespostaEntity : BaseEntity
     public QuestionarioEntity Questionario { get; private set; }
     public List<RespostaPerguntaEntity> RespostasPerguntas { get; private set; }
 
-    private RespostaEntity() { }
+    protected  RespostaEntity() { }
 
     public RespostaEntity(Guid alunoId, Guid questionarioId)
     {

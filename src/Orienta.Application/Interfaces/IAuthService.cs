@@ -1,12 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Orienta.Application.DTOs.Usuario;
+using Orienta.Domain.Entities;
 
-namespace Orienta.Application.Interfaces
+namespace Orienta.Application.Interfaces;
+
+public interface IAuthService
 {
-    public interface IAuthService
-    {
-        
-    }
+    Task<UsuarioAutenticadoDto> Login(LoginDto dto);
+    UsuarioAutenticadoDto GenerateJWT(UsuarioEntity user);
 }

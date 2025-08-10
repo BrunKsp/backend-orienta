@@ -1,27 +1,24 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using application.Dtos.Auth;
-using application.Exceptions;
-using application.Interfaces;
-using application.Services;
-using data.Infra.PG.Entities;
-using infra.PG.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Orienta.Application.DTOs.Usuario;
+using Orienta.Application.Exceptions;
 using Orienta.Application.Interfaces;
-using Orienta.Application.Utils;
+using Orienta.Domain.Entities;
+using Orienta.Infrastructure.Repositories.Interfaces;
 using BC = BCrypt.Net.BCrypt;
 
 
 namespace Orienta.Application.Services;
 
-public class AuthService : BaseService, IAuthService
+public class AuthService : IAuthService
 {
     private readonly IConfiguration _configuration;
     private readonly IUsuarioRepository _usuarioRepository;
 
-    public AuthService(IUsuarioRepository usuarioRepository, IConfiguration configuration, IUserInfo user) : base(user)
+    public AuthService(IUsuarioRepository usuarioRepository, IConfiguration configuration)
     {
         _usuarioRepository = usuarioRepository;
         _configuration = configuration;
@@ -60,7 +57,7 @@ public class AuthService : BaseService, IAuthService
     {
         dto.Email = dto.Email.Trim();
 
-        var clienteEmail = await _usuarioRepository.BuscarPorEmail(dto.Email)
+        var clienteEmail = await _usuarioRepository.ObterPorEmailAsync(dto.Email)
             ?? throw CustomException.EntityNotFound(new { error = "Email não encontrado!" });
 
         var senha = BC.Verify(dto.Senha, clienteEmail.Senha);

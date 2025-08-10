@@ -4,11 +4,9 @@ using Orienta.Domain.Enums;
 
 namespace Orienta.Infrastructure.Factories
 {
-    public class UsuarioAlunoFactory : IUsuarioFactory
+    public sealed class UsuarioAlunoFactory : IUsuarioFactory<AlunoEntity>
     {
-        public UsuarioEntity Criar(string nome, string email, string senha, string foto)
-        {
-            return new UsuarioEntity(nome, email, senha, foto, TipoUsuario.Aluno);
-        }
+        public AlunoEntity Criar(string nome, string email, string senha, string foto)
+            => new AlunoEntity(nome, email, senha, foto);
     }
 }
