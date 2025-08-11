@@ -1,12 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Orienta.Application.DTOs.Usuario;
 using Orienta.Application.Interfaces;
-using Orienta.Application.Services;
 
 namespace Orienta.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("auth")]
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
