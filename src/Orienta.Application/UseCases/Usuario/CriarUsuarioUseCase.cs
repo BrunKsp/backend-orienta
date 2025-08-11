@@ -1,16 +1,18 @@
+using Orienta.Application.DTOs.Perguntas;
 using Orienta.Application.Exceptions;
+using Orienta.Domain.Contracts;
 using Orienta.Domain.Entities;
 using Orienta.Domain.Enums;
 using Orienta.Infrastructure.Repositories;
 
-namespace Orienta.Application.UseCases.Questionario;
+namespace Orienta.Application.UseCases.Usuario;
 
-public class CriarQuestionarioUseCase
+public class CriarUsuarioUseCase
 {
     private readonly IQuestionarioFactoryProvider _factoryProvider;
     private readonly IQuestionarioRepository _repository;
 
-    public CriarQuestionarioUseCase(
+    public CriarUsuarioUseCase(
         IQuestionarioFactoryProvider factoryProvider,
         IQuestionarioRepository repository)
     {

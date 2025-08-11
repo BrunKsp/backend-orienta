@@ -6,6 +6,7 @@ using Orienta.Application.Interfaces;
 using Orienta.Domain.Entities;
 using Orienta.Domain.Enums;
 using Orienta.Infrastructure.Repositories.Interfaces;
+using BC = BCrypt.Net.BCrypt;
 
 namespace Orienta.Application.UseCases.Professor;
 
@@ -34,7 +35,10 @@ public class CriarProfessorUseCase
             throw CustomException.ErroValidacao(new { error = "Já existe esse e-mail." });
 
         var factory = _factoryProvider.Resolver(TipoUsuario.Professor);
-        var usuario = factory.Criar(dto.Nome, dto.Email, dto.Senha, dto.Foto);
+
+        var senha = BC.HashPassword(dto.Senha);
+
+        var usuario = factory.Criar(dto.Nome, dto.Email, senha, dto.Foto);
 
         var professor = usuario as ProfessorEntity
             ?? throw CustomException.BadRequest(new { error = "Factory de Professor retornou tipo inválido." });

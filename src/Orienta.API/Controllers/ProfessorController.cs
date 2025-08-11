@@ -5,19 +5,27 @@ using Orienta.Application.UseCases.Professor;
 
 namespace Orienta.API.Controllers
 {
-    [Route("[controller]")]
+    [Route("professor")]
     public class ProfessorController : ControllerBase
     {
         private readonly CriarProfessorUseCase _useCase;
-        public ProfessorController(CriarProfessorUseCase useCase)
+        private readonly BuscarProfessorUseCase _buscarUseCase;
+        public ProfessorController(CriarProfessorUseCase useCase, BuscarProfessorUseCase buscarUseCase)
         {
             _useCase = useCase;
+            _buscarUseCase = buscarUseCase;
         }
 
         [HttpPost]
-        public async Task<UsuarioAutenticadoDto> Post([FromBody] CriarProfessorDto dto)
+        public async Task<UsuarioAutenticadoDto> Criar([FromBody] CriarProfessorDto dto)
         {
             return await _useCase.ExecuteAsync(dto);
+        }
+
+        [HttpGet]
+        public async Task<UsuarioAutenticadoDto> BuscarDados()
+        {
+            return await _buscarUseCase.ExecuteAsync();
         }
     }
 }

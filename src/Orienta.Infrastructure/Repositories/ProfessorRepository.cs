@@ -18,4 +18,10 @@ public class ProfessorRepository : BaseRepository<ProfessorEntity>, IProfessorRe
     {
         return await DbSet.FirstOrDefaultAsync(p => p.Email == email);
     }
+
+    public override async Task<ProfessorEntity> BuscarPorSlug(string slug)
+    {
+        return await DbSet.AsNoTracking().FirstOrDefaultAsync(c => c.Slug == slug);
+
+    }
 }

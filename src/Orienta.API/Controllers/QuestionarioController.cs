@@ -1,8 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Orienta.Application.UseCases;
 using Orienta.Application.UseCases.Questionario;
-using Orienta.Domain.Entities;
-using Orienta.Domain.Enums;
 
 namespace Orienta.API.Controllers
 {
