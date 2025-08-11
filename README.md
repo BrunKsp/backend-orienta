@@ -4,6 +4,10 @@ Plataforma educacional desenvolvida com foco em potencializar a criação e apli
 
 ---
 
+## 📄 Swagger da Aplicação
+[👉 Acesse aqui o Swagger](https://backend-orienta-ccr5.onrender.com/swagger/index.html)
+
+
 ## 🚀 Tecnologias Utilizadas
 
 - [.NET 8](https://learn.microsoft.com/en-us/dotnet/core/)
