@@ -6,6 +6,7 @@ using Orienta.Application.Services;
 using Orienta.Application.UseCases.Aluno;
 using Orienta.Application.UseCases.Professor;
 using Orienta.Application.UseCases.Questionario;
+using Orienta.Application.Utils;
 
 namespace Orienta.Application;
 
@@ -22,9 +23,11 @@ public static class DependencyInjection
         services.AddScoped<CriarQuestionarioUseCase>();
         services.AddScoped<CriarProfessorUseCase>();
         services.AddScoped<CriarAlunoUseCase>();
+        services.AddScoped<BuscarProfessorUseCase>();
         #endregion
 
         #region Services
+        services.AddScoped<IUserInfo, UserInfo>();
         services.AddScoped<IAuthService, AuthService>();
         #endregion
 

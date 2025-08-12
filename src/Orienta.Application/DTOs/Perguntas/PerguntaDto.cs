@@ -5,9 +5,9 @@ namespace Orienta.Application.DTOs.Perguntas
 {
     public class PerguntaDto
     {
-        public string Enunciado { get; private set; }
-        public TipoPergunta Tipo { get; private set; }
-        public List<AlternativaDto> Alternativas { get; private set; } = new();
-        public string RespostaEsperada { get; private set; }
+        public string Enunciado { get; set; }
+        public TipoPergunta Tipo { get; set; }
+        public List<AlternativaDto> Alternativas { get; set; }
+        public string RespostaEsperada { get; set; }
     }
 }

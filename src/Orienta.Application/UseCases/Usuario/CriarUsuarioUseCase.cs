@@ -1,4 +1,5 @@
 using Orienta.Application.DTOs.Perguntas;
+using Orienta.Application.DTOs.Questionario;
 using Orienta.Application.Exceptions;
 using Orienta.Domain.Contracts;
 using Orienta.Domain.Entities;

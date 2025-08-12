@@ -3,7 +3,7 @@ using Orienta.Application.Services;
 using Orienta.Application.Utils;
 using Orienta.Infrastructure.Repositories.Interfaces;
 
-namespace Orienta.Application.DTOs.Professor;
+namespace Orienta.Application.UseCases.Professor;
 
 public class BuscarProfessorUseCase : BaseService
 {
@@ -26,6 +26,7 @@ public class BuscarProfessorUseCase : BaseService
             Email = professor.Email,
             Foto = professor.Foto,
             TipoUsuario = professor.TipoUsuario,
+
         };
     }
 }

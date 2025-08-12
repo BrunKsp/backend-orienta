@@ -49,6 +49,7 @@ public class AuthService : IAuthService
             Slug = user.Slug,
             Token = tokenHandler.WriteToken(token),
             Nome = user.Nome,
+            Email = user.Email,
             TipoUsuario = user.TipoUsuario,
             Foto = user.Foto
         };

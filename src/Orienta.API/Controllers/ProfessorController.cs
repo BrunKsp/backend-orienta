@@ -17,9 +17,10 @@ namespace Orienta.API.Controllers
         }
 
         [HttpPost]
-        public async Task<UsuarioAutenticadoDto> Criar([FromBody] CriarProfessorDto dto)
+        [ProducesResponseType(typeof(UsuarioAutenticadoDto), StatusCodes.Status201Created)]
+        public async Task<ActionResult<UsuarioAutenticadoDto>> Criar([FromBody] CriarProfessorDto dto)
         {
-            return await _useCase.ExecuteAsync(dto);
+            return StatusCode(StatusCodes.Status201Created, await _useCase.ExecuteAsync(dto));
         }
 
         [HttpGet]

@@ -1,3 +1,4 @@
+using Orienta.Application.DTOs.Questionario;
 using Orienta.Application.Exceptions;
 using Orienta.Domain.Entities;
 using Orienta.Domain.Enums;

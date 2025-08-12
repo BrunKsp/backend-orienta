@@ -1,10 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
+using Orienta.Application.DTOs.Questionario;
 using Orienta.Application.UseCases.Questionario;
 
 namespace Orienta.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("questionario")]
     public class QuestionarioController : ControllerBase
     {
         private readonly CriarQuestionarioUseCase _useCase;
@@ -18,7 +19,7 @@ namespace Orienta.API.Controllers
         public async Task<IActionResult> Criar([FromBody] CriarQuestionarioDto dto)
         {
             await _useCase.ExecuteAsync(dto);
-            return Ok("Questionário criado com sucesso");
+            return Created();
         }
     }
 }
